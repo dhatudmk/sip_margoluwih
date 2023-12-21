@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="./resources/ol.css">
+        <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
+        <link rel="stylesheet" href="./resources/qgis2web.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+.ol-geocoder.gcd-gl-container {
+    top: 135px!important;
+    left: .5em!important;
+    width: 2.1em!important;
+    height: 2.1em!important;
+}
+.ol-geocoder .gcd-gl-container{
+    width: 2.1em!important;
+    height: 2.1em!important;
+}
+.ol-geocoder .gcd-gl-control{
+    width: 2.1em!important;
+}
+.ol-geocoder .gcd-gl-expanded {
+    width: 15.625em!important;
+    height: 2.1875em;
+}
+.ol-touch .ol-geocoder.gcd-gl-container{
+    top: 180px!important;
+}
+.ol-geocoder .gcd-gl-btn {
+    width: 1.375em!important;
+    height: 1.375em!important;
+    top: .225em!important;
+    background-image: none!important;
+}
+</style>
+<style>
+.search-layer {
+  top: 170px;
+  left: .5em;
+}
+.ol-touch .search-layer {
+  top: 230px;
+}
+</style>
+        <style>
+        html, body {
+            background-color: #eeeeee;
+        }
+        .ol-control button {
+            background-color: #f8f8f8 !important;
+            color: #000000 !important;
+            border-radius: 0px !important;
+        }
+        .ol-zoom, .geolocate, .gcd-gl-control .ol-control {
+            background-color: rgba(255,255,255,.4) !important;
+            padding: 3px !important;
+        }
+        .ol-scale-line {
+            background: none !important;
+        }
+        .ol-scale-line-inner {
+            border: 2px solid #f8f8f8 !important;
+            border-top: none !important;
+            background: rgba(255, 255, 255, 0.5) !important;
+            color: black !important;
+        }
+        </style>
+
+        <style>
+        .geolocate {
+            top: 65px;
+            left: .5em;
+        }
+        .ol-touch .geolocate {
+            top: 80px;
+        }
+        </style>
+        <link href="resources/ol-geocoder.min.css" rel="stylesheet">
+<style>
+.tooltip {
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  color: white;
+  padding: 4px 8px;
+  opacity: 0.7;
+  white-space: nowrap;
+}
+.tooltip-measure {
+  opacity: 1;
+  font-weight: bold;
+}
+.tooltip-static {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid white;
+}
+.tooltip-measure:before,
+.tooltip-static:before {
+  border-top: 6px solid rgba(0, 0, 0, 0.5);
+  border-right: 6px solid transparent;
+  border-left: 6px solid transparent;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  margin-left: -7px;
+  left: 50%;
+}
+.tooltip-static:before {
+  border-top-color: #ffcc33;
+}
+.measure-control {
+  top: 100px;
+  left: .5em;
+  display: flex;
+}
+.ol-touch .measure-control {
+  top: 130px;
+}
+.measure-control label {
+  padding: 1px;
+  padding-right: 4px;
+}
+</style>
+        <style>
+        #map {
+          width: 60%;
+          height: 100%;
+        }
+        .table tr td, table tr th{
+          background-color: rgba(255, 255, 255, 0) !important;
+        }
+        </style>
+
+
+    <title>SIP_Margoluwih</title>
+    </head>
+    <body>
+      <div class="d-flex flex-column" style="height: 100vh; width: 100vw;">
+          <div class="p-2">
+            <h3 class="text-center">Geovisual Infografik Kalurahan Margoluwih</h3>
+          </div>
+
+          <div class="d-flex flex-row flex-fill overflow-y-scroll">
+
+            <div class="p-2 bg-success border border-2 border-info overflow-y-scroll" style="width: 40%;">
+              
+              <div id="mycarousel" class="carousel slide px-4" data-ride="carousel">
+
+                <div class="carousel-inner" style="padding-bottom: 60px">
+                  <div class="carousel-item active">
+                    <div class="container">
+                      <h3 class="text-center pb-2">Ringkasan Data</h3>
+                      <div class="col">
+                        <p class="text-center fs-5">Kalurahan Margoluwih terletak di Kapanewon Sayegan Kabupaten Sleman memiliki 14 padukuhan dengan 75 RT dan 29 RW.</p>
+                        <p class="mb-0 fs-5">Batas wilayah :</p>
+                        <table class="table table-striped bg-transparent table-sm w-50">
+                          <thead>
+                            <tr>
+                              <td scope="col"></td>
+                              <td scope="col">Kalurahan</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td scope="row">Utara</td>
+                              <td>Margodadi</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">Timur</td>
+                              <td>Sidomoyo</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">Selatan</td>
+                              <td>Sidoagung</td>
+                            </tr>
+                            <tr>
+                              <td scope="row">Barat</td>
+                              <td>Sidorejo</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row g-2 mb-2 mt-2">
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Jumlah Bidang</h5>
+                            </div>
+                            <div class="card-body">
+                              <p class="display-6 py-auto my-auto">7.803</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Total Luas Persil</h5>
+                            </div>
+                            <div class="card-body">
+                              <p class="display-6 py-auto my-auto">460,93<small class="muted fs-3">/Ha</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-2 mb-2">
+                        <div class="col">
+                          <div class="card h-100">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Luas Perkampungan</h5>
+                            </div>
+                            <div class="card-body">
+                              <p class="fs-2 py-auto my-auto">156,59<small class="muted fs-4">/Ha</small></p> <hr class="m-0">
+                              <p class="fs-2 py-auto my-auto text-end">33,97<small class="muted fs-4">%</small></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card h-100">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Luas Pertanian</h5>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center">
+                              <p class="fs-2 py-auto my-auto">269,25<small class="muted fs-4">/Ha</small></p> <hr class="m-0">
+                              <p class="fs-2 py-auto my-auto text-end align-middle">58,41<small class="muted fs-4">%</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row g-2">
+                        <div class="col">
+                          <div class="card h-100">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Luas Fasilitas Umum</h5>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center">
+                              <p class="fs-2 py-auto my-auto">156,59<small class="muted fs-4">/Ha</small></p> <hr class="m-0">
+                              <p class="fs-2 py-auto my-auto text-end">33,97<small class="muted fs-4">%</small></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="card h-100">
+                            <div class="card-header">
+                              <h5 class="py-auto my-auto">Luas Tanah Desa</h5>
+                            </div>
+                            <div class="card-body d-flex flex-column justify-content-center">
+                              <p class="fs-2 py-auto my-auto">269,25<small class="muted fs-4">/Ha</small></p> <hr class="m-0">
+                              <p class="fs-2 py-auto my-auto text-end">58,41<small class="muted fs-4">%</small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container">
+                      <h3 class="text-center">Penggunaan Tanah</h3>
+
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="container">
+                      <h3 class="text-center">Pemanfaatan Tanah</h3>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#mycarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <button class="carousel-control-prev w-auto pe-3" type="button" data-bs-target="#mycarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next w-auto ps-3" type="button" data-bs-target="#mycarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+
+              </div>
+
+            </div>
+
+            <div id="map" class="p-2 border border-2 border-success">
+                <div id="popup" class="ol-popup">
+                    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                    <div id="popup-content"></div>
+                </div>
+            </div>
+          </div>
+
+          <div class="p-2">
+            <p class="text-center fs-5 mb-0">MBKM Program KKN Tematik Sekolah Tinggi Pertanahan Nasional</p>
+          </div>
+
+      </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="resources/qgis2web_expressions.js"></script>
+        <script src="resources/proj4.js"></script>
+        <script>proj4.defs('EPSG:23835','+proj=tmerc +lat_0=0 +lon_0=109.5 +k=0.9999 +x_0=200000 +y_0=1500000 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs');</script>
+        <script src="resources/polyfills.js"></script>
+        <script src="./resources/functions.js"></script>
+        <script src="./resources/ol.js"></script>
+        <script src="./resources/ol-layerswitcher.js"></script>
+        <script src="resources/ol-geocoder.js"></script>
+        <script src="layers/Persil_Tanah_1.js"></script><script src="layers/Area_Dusun_2.js"></script><script src="layers/Garis_Batas_Administrasi_3.js"></script>
+        <script src="styles/Persil_Tanah_1_style.js"></script><script src="styles/Area_Dusun_2_style.js"></script><script src="styles/Garis_Batas_Administrasi_3_style.js"></script>
+        <script src="./layers/layers.js" type="text/javascript"></script> 
+        <script src="./resources/Autolinker.min.js"></script>
+        <script src="./resources/qgis2web.js"></script>
+    </body>
+</html>
