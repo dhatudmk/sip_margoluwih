@@ -764,7 +764,108 @@ function fnc_project_color(values, context) {
     return false;
 };
 
+function exp_Persil_Tanah_1rule0_eval_expression(context) {
+    // pfn = 'Industri' AND pm = 'Pemerintah'
 
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Industri') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Industri') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule1_eval_expression(context) {
+    // pfn = 'Jasa' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Jasa') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Jasa') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule2_eval_expression(context) {
+    // pfn = 'Peternakan' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Peternakan') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Peternakan') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule3_eval_expression(context) {
+    // pfn = 'Produksi Pertanian' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Produksi Pertanian') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Produksi Pertanian') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule4_eval_expression(context) {
+    // pfn = 'Sosial' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Sosial') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Sosial') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule5_eval_expression(context) {
+    // pfn = 'Tempat Tinggal' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Tempat Tinggal') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Tempat Tinggal') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule6_eval_expression(context) {
+    // pfn = 'Tempat Tinggal dan Usaha' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Tempat Tinggal dan Usaha') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Tempat Tinggal dan Usaha') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
+
+
+function exp_Persil_Tanah_1rule7_eval_expression(context) {
+    // pfn = 'Tidak Ada Pemanfaatan' AND pm = 'Pemerintah'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return ((feature.get('pfn')  == 'Tidak Ada Pemanfaatan') && (feature.get('pm')  == 'Pemerintah'));
+    } else {
+        return ((feature.get('pfn')  == 'Tidak Ada Pemanfaatan') && (feature.get('pm')  == 'Pemerintah'));
+    }
+}
 
 function exp_Garis_Batas_Administrasi_3rule0_eval_expression(context) {
     // tipe_batas = 'Batas Kalurahan'

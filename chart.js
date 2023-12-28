@@ -1,3 +1,10 @@
+// image slide
+const splide = new Splide('.splide', {
+  wheel: 'true',
+  gap: '10px'
+});
+splide.mount();
+
 // Data Penggunaan
 (async function() {
   const data = [
@@ -243,3 +250,36 @@
     }
   );
 })();
+
+// layers change
+const judulPeta = $('#mapContainer p:first');
+console.log(judulPeta);
+const currentIndex = $('.carousel-item.active').index();
+const myCarousel = document.getElementById('mycarousel')
+
+myCarousel.addEventListener('slid.bs.carousel', function () {
+  const indexActive = $('.carousel-item.active').index();
+  // console.log('Ini bekerja');
+  if (indexActive == 0){
+    layersList[2]=lyr_Persil_Tanah_1;
+    judulPeta.text('Peta Administrasi Dusun');
+    map.getLayers().removeAt(2);
+    map.getLayers().insertAt(2, lyr_Persil_Tanah_1);
+  } if (indexActive == 1){
+    layersList[2]=lyr_Persil_Tanah_ptn;
+    judulPeta.text('Peta Penggunaan Tanah (ptn)');
+    map.getLayers().removeAt(2);
+    map.getLayers().insertAt(2, lyr_Persil_Tanah_ptn);
+  } if (indexActive == 2){
+    layersList[2]=lyr_Persil_Tanah_pfn;
+    judulPeta.text('Peta Pemanfaatan Tanah (pfn)');
+    map.getLayers().removeAt(2);
+    map.getLayers().insertAt(2, lyr_Persil_Tanah_pfn);
+  } if (indexActive == 3){
+    layersList[2]=lyr_Persil_Tanah_pfnKasDesa;
+    judulPeta.text('Peta Pemanfaatan Tanah Kas Desa (pfn)');
+    map.getLayers().removeAt(2);
+    map.getLayers().insertAt(2, lyr_Persil_Tanah_pfnKasDesa);
+
+  }
+});

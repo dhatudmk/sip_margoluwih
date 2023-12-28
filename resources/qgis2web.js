@@ -824,6 +824,9 @@ map.on("rendercomplete", function(evt) {
         olAttribution.innerHTML = '<a href="https://openlayers.org/">OpenLayers</a> &middot; ';
         var qgisAttribution = document.createElement('li');
         qgisAttribution.innerHTML = '<a href="https://qgis.org/">QGIS</a>';
+        var creator = document.createElement('li');
+        creator.innerHTML = '<a href="https://github.com/dhatudmk/">dhatu_dmk</a> &middot;';
+        // attributionList.insertBefore(creator, firstLayerAttribution);
         attributionList.insertBefore(qgis2webAttribution, firstLayerAttribution);
         attributionList.insertBefore(olAttribution, firstLayerAttribution);
         attributionList.insertBefore(qgisAttribution, firstLayerAttribution);
