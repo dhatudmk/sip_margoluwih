@@ -253,7 +253,6 @@ splide.mount();
 
 // layers change
 const judulPeta = $('#mapContainer p:first');
-console.log(judulPeta);
 const currentIndex = $('.carousel-item.active').index();
 const myCarousel = document.getElementById('mycarousel')
 

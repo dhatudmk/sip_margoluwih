@@ -2,17 +2,24 @@ var size = 0;
 var placement = 'point';
 
 // style_dusun
-function categories_Persil_Tanah_1(feature, value, size, resolution, labelText,
-                       labelFont, labelFill, bufferColor, bufferWidth,
-                       placement) {
-                switch(value.toString()) {case 'Barak I':
-                    return [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}),fill: new ol.style.Fill({color: 'rgba(168,206,64,1.0)'}),
-        text: createTextStyle(feature, resolution, labelText, labelFont,
-                              labelFill, placement, bufferColor,
-                              bufferWidth)
-    })];
-                    break;
+function categories_Persil_Tanah_1(feature, value, size, resolution, labelText, labelFont, labelFill, bufferColor, bufferWidth, placement) {
+    switch(value.toString()) {
+        case 'Barak I':
+            return [ new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                    color: 'rgba(35,35,35,1.0)',
+                    lineDash: null, lineCap: 'butt',
+                    lineJoin: 'miter',
+                    width: 0
+                }),
+                fill: new ol.style.Fill({
+                    color: 'rgba(168,206,64,1.0)'
+                }),
+                text: createTextStyle(feature, resolution, labelText, labelFont,
+                    labelFill, placement, bufferColor,
+                    bufferWidth)
+            })];
+        break;
 case 'Barak II':
                     return [ new ol.style.Style({
         stroke: new ol.style.Stroke({color: 'rgba(35,35,35,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0}),fill: new ol.style.Fill({color: 'rgba(45,159,204,1.0)'}),

@@ -31,6 +31,14 @@ var geolocateControl = (function (Control) {
     return geolocateControl;
 }(ol.control.Control));
 
+{/* <label for="opacityLayer" class="form-label">Opacity Layer</label>\
+<input type="range" class="form-range" value="100" id="opacityLayer">\
+<div class="d-flex justify-content-between">\
+    <div>0</div>\
+    <div id="valueOpacity">100</div>\
+    <div>100</div>\
+</div>\ */}
+
 var measuring = false;
 var measureControl = (function (Control) {
     measureControl = function(opt_options) {
