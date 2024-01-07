@@ -276,7 +276,7 @@ myCarousel.addEventListener('slid.bs.carousel', function () {
     map.getLayers().insertAt(2, lyr_Persil_Tanah_pfn);
   } if (indexActive == 3){
     layersList[2]=lyr_Persil_Tanah_pfnKasDesa;
-    judulPeta.text('Peta Pemanfaatan Tanah Kas Desa (pfn)');
+    judulPeta.text('Peta Pemanfaatan Tanah Kalurahan (pfn)');
     map.getLayers().removeAt(2);
     map.getLayers().insertAt(2, lyr_Persil_Tanah_pfnKasDesa);
 
